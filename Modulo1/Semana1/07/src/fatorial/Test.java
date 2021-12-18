@@ -6,7 +6,11 @@ public class Test {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		int numero = 0, mussarela, calabresa, portuguesa;
+		int numero = 0, 
+				fatia = 0,
+				mussarela = 0, 
+				calabresa = 0, 
+				portuguesa = 0;
 		boolean loop = true;
 		while(loop) {
 			try {
@@ -20,14 +24,39 @@ public class Test {
 				{
 					switch(numero) {
 					case 1:
-						break;
+						System.out.println("Quer uma fatia: digite 1 , não quer: digite 2 ");
+						fatia = scanner.nextInt();
+						if(fatia == 1)
+							mussarela++;
+						else{
+							System.out.println("Comeu " + mussarela + calabresa + portuguesa + " fatias.");
+							fatia = 0;
+							break;
+						}		
 					case 2:
-						break;
+						System.out.println("Quer uma fatia: digite 1 , não quer: digite 2 ");
+						fatia = scanner.nextInt();
+						if(fatia == 1)
+							calabresa++;
+						else{
+							System.out.println("Comeu " + mussarela + calabresa + portuguesa + " fatias.");
+							fatia = 0;
+							break;
+						}
 					case 3:
+						System.out.println("Quer uma fatia: digite 1 , não quer: digite 2 ");
+						fatia = scanner.nextInt();
+						if(fatia == 1)
+							portuguesa++;
+						else {
+							System.out.println("Comeu " + mussarela + calabresa + portuguesa + " fatias.");
+							fatia = 0;
+							break;
+						}
+					case 0:
+						loop = false;
 						break;
-					case 
 					}
-					loop = false;
 				}
 			}catch(Exception e) {
 				System.out.println("Desculpe, entrou com dados invalidos.");
