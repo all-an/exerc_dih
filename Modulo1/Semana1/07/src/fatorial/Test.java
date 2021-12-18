@@ -18,8 +18,15 @@ public class Test {
 					  System.out.println("Entrada inválida");
 				}else
 				{
-					//for (cont = 1; cont <= numero; cont++)
-						//fatorial = fatorial * cont;
+					switch(numero) {
+					case 1:
+						break;
+					case 2:
+						break;
+					case 3:
+						break;
+					case 
+					}
 					loop = false;
 				}
 			}catch(Exception e) {
