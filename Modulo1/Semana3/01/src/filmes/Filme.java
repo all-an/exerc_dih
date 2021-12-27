@@ -5,5 +5,4 @@ public class Filme {
 	String sinopse;
 	String genero;
 	String link;
-
 }
