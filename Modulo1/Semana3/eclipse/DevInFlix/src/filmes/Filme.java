@@ -1,7 +1,10 @@
 package filmes;
 
+import java.util.UUID;
+
 public class Filme {
 	
+	private String uniqueID = UUID.randomUUID().toString();
 	private Integer id;
 	private String nome;
 	private String sinopse;
@@ -20,7 +23,7 @@ public class Filme {
 		return curtidas;
 	}
 
-	public void setCurtidas(Integer curtidas) {
+	public void setCurtida(Integer curtidas) {
 		this.curtidas += curtidas;
 	}
 	

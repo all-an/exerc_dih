@@ -1,22 +1,26 @@
 package usuarios;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.UUID;
+
 import filmes.Filme;
 
 public class Usuario {
 	
+	String uniqueID = UUID.randomUUID().toString();
 	private String nome;
 	private String endereco;
-	private Integer dia;
-	private Integer mes;
-	private Integer ano;
+	private Date dataNascimento;
+	private List<String> recomendacoes = new ArrayList<>(); //TODO:
+
 	private static Integer curtir;
 	
-	public Usuario(String nome, String endereco, Integer dia, Integer mes, Integer ano) {
+	public Usuario(String nome, String endereco, Date dataNascimento) {
 		this.nome = nome;
 		this.endereco = endereco;
-		this.dia = dia;
-		this.mes = mes;
-		this.ano = ano;
+		this.dataNascimento = dataNascimento;
 	}
 
 	public String getNome() {
@@ -27,18 +31,6 @@ public class Usuario {
 		return endereco;
 	}
 
-	public Integer getDia() {
-		return dia;
-	}
-
-	public Integer getMes() {
-		return mes;
-	}
-
-	public Integer getAno() {
-		return ano;
-	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -46,23 +38,14 @@ public class Usuario {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-
-	public void setDia(Integer dia) {
-		this.dia = dia;
-	}
-
-	public void setMes(Integer mes) {
-		this.mes = mes;
-	}
-
-	public void setAno(Integer ano) {
-		this.ano = ano;
+	
+	public Date getDataNascimento() {
+		return dataNascimento;
 	}
 	
 	public void setCurtir(Filme filme) {
 		this.curtir++;
-		filme.setCurtidas(1);
+		filme.setCurtida(1);
 	}
-	
 	
 }
